@@ -5,3 +5,8 @@ target/
 dependency-reduced-pom.xml
 /build/
 /bin/
+*/classpath
+.settings
+.project
+.gradle
+

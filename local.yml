@@ -1,0 +1,36 @@
+resources:
+  media_type: application/vnd.drm.approvals+json
+  root: http://localhost:8080/ping
+  api_key: ping
+
+database:
+  driverClass: org.h2.Driver
+  user: sa
+  password: 
+  url:  jdbc:h2:tcp://localhost/~/network
+  properties:
+    charSet: UTF-8
+    hibernate.dialect: org.hibernate.dialect.H2Dialect
+    hibernate.hbm2ddl.auto: update
+
+logging:
+
+  level: DEBUG
+
+  loggers:
+
+    org.hibernate.SQL: ERROR
+
+  appenders:
+    - type: file
+      currentLogFilename: ./logs/example.log
+      archivedLogFilenamePattern: ./logs/example-%d.log.gz
+      archivedFileCount: 5
+      timeZone: UTC
+
+    - type: console
+
+httpClient:
+  timeout: 10s
+  connectionTimeout: 10s
+  cookiesEnabled: true
